@@ -1,4 +1,4 @@
 test-repository
 ===============
 
-A temporary repository for testing.
+A temporary repository for testing. First edit.
