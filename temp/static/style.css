@@ -1,0 +1,22 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #111;
+}
+
+.sidebar {
+  background-color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  opacity: 0.8;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+img {
+  margin: 20px;
+}

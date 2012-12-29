@@ -20,10 +20,17 @@ $(document).ready(function($){
   $.getJSON("https://api.github.com/repos/schendje/test-repository/contents?callback=?", function(data){
     $(data.data).each(function(){
       if(this['type']=="dir") {
-        $('body').append("<a href='#'>"+this['path']+"</a>"+"<br>");
-      } else {
-        $('body').append(this['path']+"<br>");
+        $('.sidebar').append("<a href='#'>"+this['path']+"</a>"+"<br>");
+      } else if(this['type']=="file") {
+        if(this['path'].substr(-4)==".png") {
+          $('.sidebar').append("<a href='#' class='link' id='"+this['path']+"'>"+this['path']+"</a>"+"<br>");
+        } else {
+          $('.sidebar').append(this['path']+"<br>");
+        }
       }
+    });
+    $(".link").click(function() {
+      $('.main').html('<img src="https://raw.github.com/schendje/test-repository/master/'+$(this).attr('id')+'">');
     });
   });
 });
@@ -31,5 +38,9 @@ $(document).ready(function($){
 </script>
 </head>
 <body>
-
+<div class="main">
+<img src="image.png" />
+</div>
+<div class="sidebar">
+</div>
 </body>
