@@ -7,13 +7,27 @@
 <link rel="stylesheet" type="text/css" href="static/style.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
+/*
 $(document).ready(function($){
-  $.getJSON("https://api.github.com/repos/schendje/test-repository/commits/master/files/drawing.png?callback=?", function(data){
-    var obj = 0;
-    alert(data.data[0]["url"]);
+  $.getJSON("https://api.github.com/repos/schendje/test-repository/commits?path=files/drawing.png&callback=?", function(data){
+    $(data.data).each(function(){
+      $('body').append(this['commit']['message']+"<br>");
+    });
+  });
+});*/
+
+$(document).ready(function($){
+  $.getJSON("https://api.github.com/repos/schendje/test-repository/contents?callback=?", function(data){
+    $(data.data).each(function(){
+      if(this['type']=="dir") {
+        $('body').append("<a href='#'>"+this['path']+"</a>"+"<br>");
+      } else {
+        $('body').append(this['path']+"<br>");
+      }
+    });
   });
 });
-<branch>/<path/to/file>
+
 </script>
 </head>
 <body>
