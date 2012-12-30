@@ -5,6 +5,7 @@
 <title>Temp</title>
 <link rel="shortcut icon" href="static/favicon.ico">
 <link rel="stylesheet" type="text/css" href="static/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
 $(document).ready(function($){
@@ -78,22 +79,42 @@ $(document).ready(function($){
     });
   }
   
-  mark(20,120,20,120);  
-  
-$(".comment").hover(
-  function () {
-    if($(this).attr('id')==1) {
-      mark(120,160,120,160);
-    } else if($(this).attr('id')==2) {
-      mark(422,614,130,261);
-    } else if($(this).attr('id')==3) {
-      mark(715,1110,309,449);
+  $(".comment").hover(
+    function () {
+      if($(this).attr('id')==1) {
+        unmark();
+      } else if($(this).attr('id')==2) {
+        mark(52,527,223,664);
+      } else if($(this).attr('id')==3) {
+        mark(44,300,83,182);
+      } else if($(this).attr('id')==4) {
+        mark(575,624,88,668);
+      } else if($(this).attr('id')==5) {
+        unmark();
+      } else if($(this).attr('id')==6) {
+        unmark();
+      }
+    }, 
+    function () {
+      unmark();
     }
-  }, 
-  function () {
-    unmark();
-  }
-);
+  );
+  
+  $(".versions").change(function(){
+    $(".image").attr("src", $(this).val());
+    if($(this).val()=="static/images/mockup3.png") {
+      $(".comments3").show();
+      $(".comments1,.comments2").hide();
+    } else if($(this).val()=="static/images/mockup2.png") {
+      $(".comments2").show();
+      $(".comments1,.comments3").hide();
+    } else {
+      $(".comments1").show();
+      $(".comments2,.comments3").hide();
+    }    
+  });
+  
+  $(".comments1,.comments2").hide();
 
 });
 
@@ -104,19 +125,28 @@ $(".comment").hover(
 <div class="border"></div>
 </div>
 <div class="main">
-<img class="image" src="static/images/wireframe2.png" />
+<img class="image" src="static/images/mockup3.png" />
 </div>
 <div class="sidebar">
 <p class="path">homepage/v2/</p>
-<h1>wireframe.png</h1>
+<h1>folder_mockup<span class="extension">.png</span></h1>
 <select class="versions">
-  <option>An hour ago by Jef van Schendel</option>
-  <option>Two days ago by Oranje Paprika</option>
-  <option>Four days ago by Groene Tuinboon</option>
-  <option>A week ago by Pinda Spinazie</option>
+  <option value="static/images/mockup3.png" id="comments_3">An hour ago by Jef van Schendel</option>
+  <option value="static/images/mockup2.png" id="comments_2">Two days ago by Oranje Paprika</option>
+  <option value="static/images/mockup1.png" id="comments_1">Four days ago by Groene Tuinboon</option>
 </select>
-<a href="#" class="comment" id="1">Not sure what this is doing here. Remove it?</a>
-<a href="#" class="comment" id="2">Not sure what this is doing here. Remove it?</a>
-<a href="#" class="comment" id="3">Not sure what this is doing here. Remove it?</a>
+<p>Notes:</p>
+<div class="comments3">
+<a href="#" class="comment" id="1"><p>+1, looks better than the previous version</p><p class="poster"><img class="avatar" src="static/images/gravatar.jpg" /> Jef van Schendel</p></a>
+<a href="#" class="comment" id="2">This text may be a little too thin, it's becoming hard to read.<p class="poster"><img class="avatar" src="static/images/gravatar.jpg" /> Jef van Schendel</p></a>
+<a href="#" class="comment" id="3">Yummy. I'm wondering what the real name of these is?<p class="poster"><img class="avatar" src="static/images/gravatar.jpg" /> Jef van Schendel</p></a>
+</div>
+<div class="comments2">
+<a href="#" class="comment" id="4">You could use this straight line here as a border. Maybe switch the photo and the text?<p class="poster"><img class="avatar" src="static/images/gravatar.jpg" /> Jef van Schendel</p></a>
+<a href="#" class="comment" id="5">Makes me hungry!<p class="poster"><img class="avatar" src="static/images/gravatar.jpg" /> Jef van Schendel</p></a>
+</div>
+<div class="comments1">
+<a href="#" class="comment" id="6">We're not advertising a funeral. Throw in some color!<p class="poster"><img class="avatar" src="static/images/gravatar.jpg" /> Jef van Schendel</p></a>
+</div>
 </div>
 </body>

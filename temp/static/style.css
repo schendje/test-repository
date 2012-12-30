@@ -5,23 +5,20 @@ html {
 body {
   margin: 0;
   background-color: #111;
-  font-family: sans-serif;
+  padding: 20px;
+  padding-left: 340px;
+  font-family: 'Archivo Narrow', sans-serif;
 }
 
 .sidebar {
   background-color: #fff;
+  border: 1px solid #bbb;
   position: fixed;
-  top: 10px;
-  right: 10px;
-  opacity: 0.8;
-  padding: 20px;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
   border-radius: 4px;
   width: 260px;
-}
-
-img {
-  margin: 20px;
-  margin-right: 320px;
 }
 
 .link {
@@ -34,10 +31,16 @@ img {
   display: block;
   border: 1px solid #bbb;
   margin-bottom: 10px;
+  text-decoration: none;
+  color: #222;
+}
+
+.comment p {
+  margin: 0;
 }
 
 .comment:hover {
-  background-color: #bbb;
+  background-color: #eee;
 }
 
 .container {
@@ -58,6 +61,15 @@ h1 {
   font-size: 24px;
   margin-top: 0px;
   margin-bottom: 10px;
+  color: #222;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.extension {
+  color: #999;
 }
 
 .path {
@@ -71,4 +83,30 @@ h1 {
 
 .versions option {
   padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: 1px;
+}
+
+.versions option#comments_3 {
+  background-image:url('images/comments_3.png');
+}
+
+.versions option#comments_2 {
+  background-image:url('images/comments_2.png');
+}
+
+.versions option#comments_1 {
+  background-image:url('images/comments_1.png');
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  vertical-align: text-bottom;
+}
+
+.poster {
+  color: #666;
+  font-size: 15px;
+  text-align: right;
 }
