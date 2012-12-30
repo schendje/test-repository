@@ -48,10 +48,6 @@ $(document).ready(function($){
   var mark_width;
   var mark_height;
 
-  $(".link").click(function() {
-    $('.main').html('<img src="'+$(this).attr('id')+'">');
-  });
-
   image_top = $(".image").position().top;
   image_left = $(".image").position().left;
   image_width = $(".image").width();
@@ -86,14 +82,19 @@ $(document).ready(function($){
   
 $(".comment").hover(
   function () {
-    mark(120,160,120,160);
+    if($(this).attr('id')==1) {
+      mark(120,160,120,160);
+    } else if($(this).attr('id')==2) {
+      mark(422,614,130,261);
+    } else if($(this).attr('id')==3) {
+      mark(715,1110,309,449);
+    }
   }, 
   function () {
     unmark();
   }
 );
 
-  
 });
 
 </script>
@@ -106,12 +107,16 @@ $(".comment").hover(
 <img class="image" src="static/images/wireframe2.png" />
 </div>
 <div class="sidebar">
-<a href="#" class="link" id="static/images/wireframe.png">wireframe.png</a>
-<a href="#" class="link" id="static/images/wireframe2.png">wireframe2.png</a>
-<a href="#" class="link" id="static/images/wireframe3.png">wireframe3.png</a>
-<a href="#" class="link" id="static/images/wireframe4.png">wireframe4.png</a>
-<a href="#" class="link" id="static/images/layout_explained.png">layout_explained.png</a>
-<hr />
-<a href="#" class="comment">Not sure what this is doing here. Remove it?</a>
+<p class="path">homepage/v2/</p>
+<h1>wireframe.png</h1>
+<select class="versions">
+  <option>An hour ago by Jef van Schendel</option>
+  <option>Two days ago by Oranje Paprika</option>
+  <option>Four days ago by Groene Tuinboon</option>
+  <option>A week ago by Pinda Spinazie</option>
+</select>
+<a href="#" class="comment" id="1">Not sure what this is doing here. Remove it?</a>
+<a href="#" class="comment" id="2">Not sure what this is doing here. Remove it?</a>
+<a href="#" class="comment" id="3">Not sure what this is doing here. Remove it?</a>
 </div>
 </body>

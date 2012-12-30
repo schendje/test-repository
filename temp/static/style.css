@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   background-color: #111;
+  font-family: sans-serif;
 }
 
 .sidebar {
@@ -20,6 +21,7 @@ body {
 
 img {
   margin: 20px;
+  margin-right: 320px;
 }
 
 .link {
@@ -31,6 +33,7 @@ img {
   border-radius: 4px;
   display: block;
   border: 1px solid #bbb;
+  margin-bottom: 10px;
 }
 
 .comment:hover {
@@ -51,3 +54,21 @@ img {
   height:100%;
 }
 
+h1 {
+  font-size: 24px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.path {
+  margin-bottom: 0px;
+}
+
+.versions {
+  width: 260px;
+  margin-bottom: 10px;
+}
+
+.versions option {
+  padding-left: 20px;
+}
